@@ -1,0 +1,9 @@
+language: German
+countries: de at ch li
+
+"settings_title" = "Einstellungen"
+"visual_settings_title" = "ANZEIGE"
+"visual_settings_theme_label" = "Design"
+"visual_settings_dark_theme" = "Dunkel"
+"visual_settings_light_theme" = "Hell"
+"language_settings_title" = "SPRACHE"

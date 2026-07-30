@@ -1,0 +1,9 @@
+language: French
+countries: fr be mc ch lu
+
+"settings_title" = "Paramètres"
+"visual_settings_title" = "AFFICHAGE"
+"visual_settings_theme_label" = "Thème"
+"visual_settings_dark_theme" = "Sombre"
+"visual_settings_light_theme" = "Clair"
+"language_settings_title" = "LANGUE"

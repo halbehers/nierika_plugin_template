@@ -1,0 +1,9 @@
+language: Portuguese
+countries: pt br
+
+"settings_title" = "Definições"
+"visual_settings_title" = "VISUAL"
+"visual_settings_theme_label" = "Tema"
+"visual_settings_dark_theme" = "Escuro"
+"visual_settings_light_theme" = "Claro"
+"language_settings_title" = "IDIOMA"

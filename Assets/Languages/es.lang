@@ -1,0 +1,9 @@
+language: Spanish
+countries: es mx ar cl co pe
+
+"settings_title" = "Ajustes"
+"visual_settings_title" = "VISUAL"
+"visual_settings_theme_label" = "Tema"
+"visual_settings_dark_theme" = "Oscuro"
+"visual_settings_light_theme" = "Claro"
+"language_settings_title" = "IDIOMA"

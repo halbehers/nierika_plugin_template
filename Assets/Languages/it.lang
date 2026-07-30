@@ -1,0 +1,9 @@
+language: Italian
+countries: it ch sm va
+
+"settings_title" = "Impostazioni"
+"visual_settings_title" = "VISUALE"
+"visual_settings_theme_label" = "Tema"
+"visual_settings_dark_theme" = "Scuro"
+"visual_settings_light_theme" = "Chiaro"
+"language_settings_title" = "LINGUA"

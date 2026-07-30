@@ -38,6 +38,12 @@ TEST_CASE("PluginAudioProcessor round-trips parameter state via getStateInformat
     REQUIRE(enabledParameter != nullptr);
     enabledParameter->setValueNotifyingHost(0.0f); // flips PLUGIN_ENABLED_ID away from its default (true)
 
+    // AudioProcessorValueTreeState only flushes parameter values into its internal state
+    // ValueTree periodically (an internal 10Hz timer), not synchronously on
+    // setValueNotifyingHost() - pump the message loop briefly so getStateInformation() below
+    // serializes the up-to-date value rather than a stale, not-yet-flushed one.
+    juce::MessageManager::getInstance()->runDispatchLoopUntil(150);
+
     juce::MemoryBlock state;
     source.getStateInformation(state);
     REQUIRE(state.getSize() > 0);

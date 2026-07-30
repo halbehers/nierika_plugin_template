@@ -26,7 +26,7 @@ else ()
     set(LOCAL_DSP_DEV_DIR "$ENV{HOME}/Development")
 endif ()
 
-set(USE_LOCAL_NIERIKA_DSP ON)
+set(USE_LOCAL_NIERIKA_DSP OFF)
 set(LOCAL_NIERIKA_DSP_PATH "${LOCAL_DSP_DEV_DIR}/nierika_dsp") # Change for your local path to the nierika_dsp module if you want to use a local version instead of the remote package.
 
 if (USE_LOCAL_NIERIKA_DSP AND NOT EXISTS "${LOCAL_NIERIKA_DSP_PATH}")

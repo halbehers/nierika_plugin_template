@@ -7,7 +7,7 @@ void Parameters::registerPluginParameters(PluginAudioProcessor* audioProcessor)
                PLUGIN_ENABLED_ID,
                "Plugin Enabled",
                PLUGIN_ENABLED_DEFAULT,
-               [audioProcessor](bool value) { /* TODO: Implement */ },
+               [](bool) { /* TODO: Implement */ },
                "Bypass the whole plugin."
             );
 }

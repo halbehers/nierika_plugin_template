@@ -1,4 +1,5 @@
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/catch_approx.hpp>
 
 #include "Parameters.h"
 #include "PluginProcessor.h"
@@ -55,5 +56,5 @@ TEST_CASE("PluginAudioProcessor round-trips parameter state via getStateInformat
 
     const auto* restoredValue = restored.getState().getRawParameterValue(Parameters::PLUGIN_ENABLED_ID);
     REQUIRE(restoredValue != nullptr);
-    CHECK(restoredValue->load() == 0.0f);
+    CHECK(restoredValue->load() == Catch::Approx(0.0f));
 }

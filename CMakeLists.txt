@@ -139,13 +139,38 @@ if (WIN32)
     target_link_libraries(${PROJECT_NAME} PUBLIC dwmapi)
 endif ()
 
+foreach(dep_target IN ITEMS
+        juce::juce_audio_basics
+        juce::juce_audio_devices
+        juce::juce_audio_formats
+        juce::juce_audio_plugin_client
+        juce::juce_audio_processors
+        juce::juce_audio_utils
+        juce::juce_core
+        juce::juce_data_structures
+        juce::juce_dsp
+        juce::juce_events
+        juce::juce_graphics
+        juce::juce_gui_basics
+        juce::juce_gui_extra
+        nierika::nierika_dsp)
+    get_target_property(dep_real_target ${dep_target} ALIASED_TARGET)
+    if (NOT dep_real_target)
+        set(dep_real_target ${dep_target})
+    endif ()
+    get_target_property(dep_include_dirs ${dep_real_target} INTERFACE_INCLUDE_DIRECTORIES)
+    if (dep_include_dirs)
+        set_target_properties(${dep_real_target} PROPERTIES INTERFACE_SYSTEM_INCLUDE_DIRECTORIES "${dep_include_dirs}")
+    endif ()
+endforeach ()
+
 target_compile_definitions(${PROJECT_NAME} PUBLIC
         JUCE_VST3_CAN_REPLACE_VST2=0
         JUCE_USE_CUSTOM_PLUGIN_STANDALONE_APP=1
         COMPANY_NAME="${COMPANY_NAME}")
 
 # Treat warnings as errors
-set_source_files_properties(${SOURCE_FILES} PROPERTIES COMPILE_OPTIONS "${PROJECT_WARNINGS_CXX}")
+set_source_files_properties(${SourceFiles} PROPERTIES COMPILE_OPTIONS "${PROJECT_WARNINGS_CXX}")
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/..)
 

@@ -3,7 +3,6 @@
 
 PluginAudioProcessorEditor::PluginAudioProcessorEditor(PluginAudioProcessor& p):
     AudioProcessorEditor(&p),
-    audioProcessor(p),
     _layout(p)
 {
     addAndMakeVisible(_layout, 10);

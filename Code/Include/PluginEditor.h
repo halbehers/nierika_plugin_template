@@ -17,8 +17,6 @@ public:
     void setBypass(bool isBypassed);
 
 private:
-    PluginAudioProcessor& audioProcessor;
-
     AppLayout _layout;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PluginAudioProcessorEditor)
